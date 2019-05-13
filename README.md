@@ -1,4 +1,4 @@
-# Options for Advanced Product Options by Mageworx on Shopify (and other apps)
+# Customized Options for Advanced Product Options on Shopify (and other apps)
 
 ## Quick Intro
 
@@ -37,16 +37,15 @@ The reason for the IDs is that the app makes very general classes. There are tim
 One of the coolest customizations you can use for this is creating a font preview next to the input or wherever you want really. Just use a bit of Angular and you're done. This is where the custom IDs can help if you have multiple input selections.
 
 Another nifty trick is when a selection is made with buttons, we'll need to call out another option based on the button selection. While out of the box the app can handle this, sometimes you'll need to hide a selection that has TONS of options. If you have used this particular app, it can be difficult and very daunting.
-Simply class the option, then create some for & if statement. Here's part of an "unfinished" sample using an pre-defined array (I shortened this up for sake of my sanity)
+Simply class the option, then create some for & if statement. Here's part of an "unfinished" sample using a pre-defined array (I shortened this up for sake of my sanity)
 ```
-var numOver = ["one","two","three"]
-var numValues = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"];
-var numValues_02 = ["8","9","10","11","12","13","14"];
+var numValues = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]; // just a bunch of strings
+var numValues_02 = ["8","9","10","11","12","13","14"]; // our targeted strings
 $('.example .swatch-option .swatch-value-container').click(function(){
-  for (let i = 0; i < numValues.length; i++) {
+  for (let i = 0; i < numValues.length; i++) { 
     if ($("#someID_" + numValues_02[i] + " " + ".button-value--selected").length) { // used custom ID here
       // if the value is 14-20 we make the input 2
-      // YAY! it works. now we need to make sure the input is enter correctly to reflect the price.
+      // YAY! It works and now we need to make sure the input is entered correctly to reflect the price.
       $(".classOne .swatch-selected .mw-input input").val("2");
     }
   }
